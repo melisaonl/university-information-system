@@ -1,0 +1,70 @@
+﻿@model IEnumerable<AkademikBilgiSistemi.Models.Tbl_Notlar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAkademisyen.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Sinav1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sinav2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sinav3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ortalama)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Durum)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Dersler.DersAd)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Tbl_Ogrenciler.OgrAd)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sinav1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sinav2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sinav3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ortalama)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Durum)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Dersler.DersAd)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Tbl_Ogrenciler.OgrAd)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

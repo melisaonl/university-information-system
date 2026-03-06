@@ -1,0 +1,92 @@
+﻿@model List<AkademikBilgiSistemi.Models.Tbl_Notlar>
+@{
+    ViewBag.Title = "AdmsNotlar";
+    Layout = "~/Views/Shared/_LayoutAkademisyen.cshtml";
+}
+
+<div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info" style="background: #9b8080; border: 0px">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <h3 style="position:absolute; right:90px; top:3px"> KAYSERİ ÜNİVERSİTESİ</h3>
+            <img src="~/login-form-v1/Login_v1/images/uniLogo.png" style="height:60px; position:absolute; right:10px; top:2px" />
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h2>ÖĞRENCİ NOTLAR</h2>
+                <br />
+                <form method="post">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Öğrenci Numarası</th>
+                                <th scope="col">Öğrenci </th>
+                                <th scope="col">Ders Numarası</th>
+                                <th scope="col">Ders Adı</th>
+                                <th scope="col">VİZE 1</th>
+                                <th scope="col">VİZE 2</th>
+                                <th scope="col">FİNAL</th>
+                                <th scope="col">Ortalama</th>
+                                <th scope="col">Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                if (item.Ortalama >= 60)
+                                {
+                                    <tr style="background-color:#7ccf59">
+                                        <td>@item.OgrenciID</td>
+                                        <td>@item.Tbl_Ogrenciler.OgrAd  @item.Tbl_Ogrenciler.OgrSoyad</td>
+                                        <td>@item.DersID</td>
+                                        <td>@item.Tbl_Dersler.DersAd</td>
+                                        <td>@item.Sinav1</td>
+                                        <td>@item.Sinav2</td>
+                                        <td>@item.Sinav3</td>
+                                        <td>@item.Ortalama</td>
+                                        <td>Geçti</td>
+                                        <td>
+                                            <a href="~/AkademisyenDers/NotKaydet/@item.OgrenciID" class="btn btn-info"
+                                               style="background-color: #3cb9b9; text-decoration: none; color: white; padding: 5px 10px; font-size: 20px; border-radius: 5px 5px 5px 5px; text-align: center ">
+                                                <i class="glyphicon glyphicon-refresh"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr style="background-color:#e74646">
+                                        <td>@item.OgrenciID</td>
+                                        <td>@item.Tbl_Ogrenciler.OgrAd  @item.Tbl_Ogrenciler.OgrSoyad</td>
+                                        <td>@item.DersID</td>
+                                        <td>@item.Tbl_Dersler.DersAd</td>
+                                        <td>@item.Sinav1</td>
+                                        <td>@item.Sinav2</td>
+                                        <td>@item.Sinav3</td>
+                                        <td>@item.Ortalama</td>
+                                        <td>Kaldı</td>
+                                        <td>
+                                            <a href="~/AkademisyenDers/NotKaydet/@item.OgrenciID" class="btn btn-info"
+                                               style="background-color: #3cb9b9; text-decoration: none; color:white; padding: 5px 10px ; font-size:20px; border-radius: 5px 5px 5px 5px; text-align:center;">
+                                                <i class="glyphicon glyphicon-refresh"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                    <a href="~/AkademisyenDers/OgrenciNotEkle"
+                       style="background-color: #d25700; text-decoration: none; color:white; padding: 4px 8px ; font-size:20px; border-radius: 5px 5px 5px 5px; ">
+                        <i class=" fa fa-user-plus"></i>
+                    </a>
+                </form>
+            </div>
+        </nav>
+    </div>
+</div>

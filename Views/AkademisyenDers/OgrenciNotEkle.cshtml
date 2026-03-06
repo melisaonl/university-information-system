@@ -1,0 +1,56 @@
+﻿@model AkademikBilgiSistemi.Models.Tbl_Notlar
+@{
+    ViewBag.Title = "OgrenciNotEkle";
+    Layout = "~/Views/Shared/_LayoutAkademisyen.cshtml";
+}
+
+<div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info" style="background: #9b8080; border: 0px">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <h3 style="position:absolute; right:90px; top:3px"> KAYSERİ ÜNİVERSİTESİ</h3>
+            <img src="~/login-form-v1/Login_v1/images/uniLogo.png" style="height:60px; position:absolute; right:10px; top:2px" />
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h2>DERSE ÖĞRENCİ EKLE</h2>
+                <br />
+                <br />
+                @using (Html.BeginForm("OgrenciNotEkle", "AkademisyenDers", FormMethod.Post))
+                {
+                    <div class="form-group">
+                        <br />
+                        <br />
+                        @*@Html.DropDownListFor(x => x.Tbl_Ogrenciler.Ogr_ID, (List<SelectListItem>)ViewBag.ogrenciler, new {@class = "form-control"})*@
+                        @*@{
+                                var ogrenciListesi = ViewBag.ogrenciler as List<SelectListItem>;
+                                var dersiAlmayanOgrenciler = ogrenciListesi.Where(o => !o.Selected).ToList();
+                            }*@
+
+                        @*@Html.DropDownList("OgrenciID", ogrenciListesi, "Öğrenci Seçiniz", new { @class = "form-control" })*@
+                        @Html.DropDownList("OgrenciID", null, "Öğrenci Seçiniz", new { @class = "form-control" })
+
+                        <br />
+                        @Html.LabelFor(m => m.Sinav1)
+                        @Html.TextBoxFor(m => m.Sinav1, new { @class = "form-control" })
+                        <br />
+                        @Html.LabelFor(m => m.Sinav2)
+                        @Html.TextBoxFor(m => m.Sinav2, new { @class = "form-control" })
+                        <br />
+                        @Html.LabelFor(m => m.Sinav3)
+                        @Html.TextBoxFor(m => m.Sinav3, new { @class = "form-control" })
+                    </div>
+                    <div>
+                        <button class="btn btn-warning">Kaydet</button>
+                    </div>
+                }
+            </div>
+        </nav>
+    </div>
+</div>
+

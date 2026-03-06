@@ -1,0 +1,60 @@
+﻿@model AkademikBilgiSistemi.Models.Tbl_Ogretmenler
+@{
+    ViewBag.Title = "AdmsBilgiler";
+    Layout = "~/Views/Shared/_LayoutAkademisyen.cshtml";
+}
+
+<div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info" style="background: #9b8080; border:0px">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <h3 style="position:absolute; right:90px; top:3px"> KAYSERİ ÜNİVERSİTESİ</h3>
+            <img src="~/login-form-v1/Login_v1/images/uniLogo.png" style="height:60px; position:absolute; right:10px; top:2px" />
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h2>AKADEMİSYEN BİLGİLER</h2>
+                <br />
+                <i class="fa fa-user" style="font-size:25px"></i>
+                &nbsp;&nbsp;AKADEMİSYEN : <asp:TextBox runat="server" style="font-size:20px">@Model.OgrtUnvan @Model.OgrtAd @Model.OgrtSoyad</asp:TextBox>
+                <br />
+                <br />
+                <br />
+                <br />
+                <i class="fa fa-square" style="font-size:25px"></i>
+                &nbsp;&nbsp;AKADEMİSYEN NUMARASI : <asp:TextBox runat="server" style="font-size:20px">@Model.OgrtID</asp:TextBox>
+                <br />
+                <br />
+                <br />
+                <br />
+                <i class="fa fa-university" style="font-size:25px"></i>
+                &nbsp;&nbsp;MEZUN OLDUĞU ÜNİVERSİTE : <asp:TextBox runat="server" style="font-size:20px">@Model.OgrtUniversite</asp:TextBox>
+                <br />
+                <br />
+                <br />
+                <br />
+                <i class="fa fa-phone" style="font-size:25px"></i>
+                &nbsp;&nbsp;TELEFON BİLGİLERİ : <asp:TextBox runat="server" style="font-size:20px">Dahili-@Model.OgrtTelefon</asp:TextBox>
+                <br />
+                <br />
+                <br />
+                <br />
+                <i class="fa fa-envelope" style="font-size:25px"></i>
+                &nbsp;&nbsp;E-POSTA BİLGİLERİ : <asp:TextBox runat="server" style="font-size:20px">@Model.OgrtMail</asp:TextBox>
+                <br />
+                <br />
+                <br />
+                <br />
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+
+

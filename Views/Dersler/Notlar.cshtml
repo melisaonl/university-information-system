@@ -1,0 +1,75 @@
+﻿@model List<AkademikBilgiSistemi.Models.Tbl_Notlar>
+@{
+    ViewBag.Title = "Notlar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn btn-info">
+                    <i class="fas fa-align-left"></i>
+                </button>
+                <h3 style="position:absolute; right:90px; top:3px"> KAYSERİ ÜNİVERSİTESİ</h3>
+                <img src="~/login-form-v1/Login_v1/images/uniLogo.png" style="height:60px; position:absolute; right:10px; top:2px" />
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <h2>NOTLAR</h2>
+                    <br />
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Ders Numarası</th>
+                                <th scope="col">Ders Adı</th>
+                                <th scope="col">VİZE 1</th>
+                                <th scope="col">VİZE 2</th>
+                                <th scope="col">FİNAL</th>
+                                <th scope="col">Ortalama</th>
+                                <th scope="col">Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                if (item.Ortalama >= 60)
+                                {
+                                    <tr style="background-color:#7ccf59">
+                                        <td>@item.DersID</td>
+                                        <td>@item.Tbl_Dersler.DersAd</td>
+                                        <td>@item.Sinav1</td>
+                                        <td>@item.Sinav2</td>
+                                        <td>@item.Sinav3</td>
+                                        <td>@item.Ortalama</td>
+                                        <td>Geçti</td>
+                                    </tr>
+                                }
+                                else
+                                {
+                                    <tr style="background-color:#e74646">
+                                        <td>@item.DersID</td>
+                                        <td>@item.Tbl_Dersler.DersAd</td>
+                                        <td>@item.Sinav1</td>
+                                        <td>@item.Sinav2</td>
+                                        <td>@item.Sinav3</td>
+                                        <td>@item.Ortalama</td>
+                                        <td>Kaldı</td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
+
+

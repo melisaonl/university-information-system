@@ -1,0 +1,65 @@
+﻿@model List<AkademikBilgiSistemi.Models.Tbl_Ogrenciler>
+@{
+    ViewBag.Title = "AdmsOgrListe";
+    Layout = "~/Views/Shared/_LayoutAkademisyen.cshtml";
+}
+
+
+<div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info" style="background: #9b8080; border: 0px">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <h3 style="position:absolute; right:90px; top:3px"> KAYSERİ ÜNİVERSİTESİ</h3>
+            <img src="~/login-form-v1/Login_v1/images/uniLogo.png" style="height:60px; position:absolute; right:10px; top:2px" />
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h2>ÖĞRENCİ LİSTESİ</h2>
+                <br />
+                <form>
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th scope="col">Öğrenci Numarası</th>
+                                <th scope="col">Adı</th>
+                                <th scope="col">Soyadı</th>
+                                <th scope="col">Telefon Numarası</th>
+                                <th scope="col">E-Posta</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@item.Ogr_ID</td>
+                                    <td>@item.OgrAd</td>
+                                    <td>@item.OgrSoyad</td>
+                                    <td>@item.OgrTelefon</td>
+                                    <td>@item.OgrMail</td>
+                                    <td>
+                                        <a href="~/AkademisyenOgrenciler/AdmsOgrDetay/@item.Ogr_ID"
+                                           style="background-color: #42bdbd; text-decoration: none; color: white; padding: 4px 8px; font-size: 20px; border-radius: 5px 5px 5px 5px; ">
+                                            <i class=" fa fa-eye"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </form>
+                <br />
+                <a href="~/AkademisyenOgrenciler/OgrEkle" 
+                   style="background-color: #d25700; text-decoration: none; color:white; padding: 4px 8px ; font-size:20px; border-radius: 5px 5px 5px 5px; " >
+                    <i class=" fa fa-user-plus"></i>
+                </a>
+            </div>
+        </nav>
+    </div>
+</div>
+

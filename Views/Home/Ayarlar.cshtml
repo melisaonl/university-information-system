@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Ayarlar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<div id="content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <h3 style="position:absolute; right:90px; top:3px"> KAYSERİ ÜNİVERSİTESİ</h3>
+            <img src="~/login-form-v1/Login_v1/images/uniLogo.png" style="height:60px; position:absolute; right:10px; top:2px" />
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h2 style="color: #d11c1c">ŞİFRE DEĞİŞİKLİĞİ</h2>
+                <br />
+                <br />
+                @ViewBag.mesaj
+                <form method="post">
+                    <h4>Öğrenci Numarası</h4>
+                    <input type="number" name="Ogr_ID" style="position: relative; border-radius: 5px 5px 5px 5px; width: 50%; box-shadow: 1px 1px 1px 1px " required />
+                    <br />
+                    <br />
+                    <h4>Öğrenci E-Posta</h4>
+                    <input type="text" name="OgrMail" style="position: relative; border-radius: 5px 5px 5px 5px; width: 50%; box-shadow: 1px 1px 1px 1px " required />
+                    <br />
+                    <br />
+                    <h4>Güncel Şifre</h4>
+                    <input type="text" name="OgrSifre" style="position: relative; border-radius: 5px 5px 5px 5px; width: 50%; box-shadow: 1px 1px 1px 1px " required />
+                    <br />
+                    <br />
+                    <h4>Yeni Şifre</h4>
+                    <input type="text" name="YeniSifre" style="position: relative; border-radius: 5px 5px 5px 5px; width: 50%; box-shadow: 1px 1px 1px 1px" required />
+                    <br />
+                    <br />
+                    <br />
+                    <div>
+                        <button class="btn btn-warning">Güncelle</button>
+                    </div>
+
+                </form>
+            </div>
+        </nav>
+    </div>
+</div>

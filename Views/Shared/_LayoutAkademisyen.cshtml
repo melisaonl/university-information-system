@@ -1,0 +1,144 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="~/Dosyalar1/bootstrap.min.css" rel="stylesheet" />
+    <title>Akademisyen Bilgi Sistemi</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="~/Dosyalar1/bootstrap-3.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Our Custom CSS -->
+    <link href="~/Dosyalar1/StyleSheet2.css" rel="stylesheet" />
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <style>
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+            background: #645151;
+            color: #fff;
+            transition: all 0.3s;
+        }
+            #sidebar .sidebar-header {
+                padding: 20px;
+                background: #645959;
+            }
+            #sidebar ul li a:hover {
+                color: #000000;
+                background: #645151;
+            }
+        ul ul a {
+            font-size: 0.9em !important;
+            padding-left: 30px !important;
+            background: #645959;
+        }
+        #sidebar ul li.active > a,
+        a[aria-expanded="true"] {
+            color: #fff;
+            background: #645959;
+        }
+        .navbar-btn {
+            box-shadow: none;
+            outline: none !important;
+            border: none;
+            background: #645959;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Akademisyen Bilgi Sistemi</h3>
+                <strong>ABS</strong>
+                <hr />
+                <center class="yer">
+                    <i class="fas fa-book" style="font-size:40px"></i>
+                    <h3>@Session["OgretmenAdi"] @Session["OgretmenSoyadi"]</h3>
+
+                </center>
+            </div>
+            <ul class="list-unstyled components">
+                <li>
+                    <a href="~/AkademisyenHome/Index">
+                        <i class="fas fa-home"></i>
+                        Anasayfa
+                    </a>
+                </li>
+                <li>
+                    <a href="#duyuruSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-list-ul"></i>
+                        Duyurular
+                    </a>
+                    <ul class="collapse list-unstyled" id="duyuruSubmenu">
+                        <li>
+                            <a href="~/AkademisyenDuyuru/AdmsDuyuru">Yayınlanan Duyurular</a>
+                        </li>
+                        <li>
+                            <a href="~/AkademisyenDuyuru/AdmsDuyuruGönder">Duyuru Yayınla</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                        <i class="fas fa-briefcase"></i>
+                        Dersler
+                    </a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="~/AkademisyenDers/AdmsNotlar">Notlar</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="~/AkademisyenOgrenciler/AdmsOgrListe">
+                        <i class="fas fa-graduation-cap"></i>
+                        Öğrenciler
+                    </a>
+                    <a href="~/AkademisyenHome/AdmsBilgiler">
+                        <i class="fas fa-user"></i>
+                        Bilgilerim
+                    </a>
+                </li>
+                <li>
+                    <a href="~/AkademisyenHome/AdmsAyarlar">
+                        <i class="fas fa-wrench"></i>
+                        Ayarlar
+                    </a>
+                </li>
+                <asp:Button runat="server" Text="Button"></asp:Button>
+                <li style="margin-top:5px" class=" nav-item has-treeview">
+                    <a href="~/Login/AdmsLogout" class=" nav-link">
+                        <i class="fas fa-window-close"></i>
+                        ÇIKIŞ YAP
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        @RenderBody()
+    </div>
+
+
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+            });
+        });
+    </script>
+</body>
+</html>
+
+

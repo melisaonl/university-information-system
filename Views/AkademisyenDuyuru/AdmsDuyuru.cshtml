@@ -1,0 +1,48 @@
+﻿@model List<AkademikBilgiSistemi.Models.Tbl_Duyurular>
+@{
+    ViewBag.Title = "AdmsDuyuru";
+    Layout = "~/Views/Shared/_LayoutAkademisyen.cshtml";
+}
+<div id="content">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <button type="button" id="sidebarCollapse" class="btn btn-info" style="background: #9b8080; border: 0px">
+                <i class="fas fa-align-left"></i>
+            </button>
+            <h3 style="position:absolute; right:90px; top:3px"> KAYSERİ ÜNİVERSİTESİ</h3>
+            <img src="~/login-form-v1/Login_v1/images/uniLogo.png" style="height:60px; position:absolute; right:10px; top:2px" />
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <h2>DUYURULAR</h2>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Gönderen</th>
+                            <th scope="col">Duyuru Konusu</th>
+                            <th scope="col">Duyuru </th>
+                            <th scope="col">Tarih</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@item.Tbl_Ogretmenler.OgrtAd @item.Tbl_Ogretmenler.OgrtSoyad</td>
+                                <td>@item.DuyuruBaslik</td>
+                                <td>@item.DuyuruIcerik</td>
+                                <td>@Convert.ToDateTime(item.DuyuruTarih).ToShortDateString()</td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </nav>
+    </div>
+</div>
+
+

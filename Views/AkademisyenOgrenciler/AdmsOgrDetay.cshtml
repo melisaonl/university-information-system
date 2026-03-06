@@ -1,0 +1,107 @@
+﻿@model AkademikBilgiSistemi.Models.Tbl_Ogrenciler
+@{
+    ViewBag.Title = "AdmsOgrDetay";
+    Layout = "~/Views/Shared/_LayoutAkademisyen.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<body>
+    <div id="content">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <button type="button" id="sidebarCollapse" class="btn btn-info" style="background: #9b8080; border:0px" ">
+                    <i class="fas fa-align-left"></i>
+                </button>
+                <h3 style="position:absolute; right:90px; top:3px"> KAYSERİ ÜNİVERSİTESİ</h3>
+                <img src="~/login-form-v1/Login_v1/images/uniLogo.png" style="height:60px; position:absolute; right:10px; top:2px" />
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <h2>ÖĞRENCİ BİLGİLERİ</h2>
+                    <br />
+                    <form>
+                        <i class="fa fa-user" style="font-size:25px"></i>
+                        &nbsp;&nbsp;ÖĞRENCİ ADI SOYADI : <asp:TextBox runat="server" style="font-size:20px">@Model.OgrAd  @Model.OgrSoyad</asp:TextBox>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <i class="fa fa-square" style="font-size:25px"></i>
+                        &nbsp;&nbsp;ÖĞRENCİ NUMARASI : <asp:TextBox runat="server" style="font-size:20px">@Model.Ogr_ID</asp:TextBox>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <i class="fa fa-university" style="font-size:25px"></i>
+                        &nbsp;&nbsp;ÜNİVERSİTE ADI : <asp:TextBox runat="server" style="font-size:20px">@Model.OgrUniAdi</asp:TextBox>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <i class="fa fa-briefcase" style="font-size:25px"></i>
+                        &nbsp;&nbsp;FAKÜLTE ADI : <asp:TextBox runat="server" style="font-size:20px">@Model.OgrFakulteAdi</asp:TextBox>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <i class="fa fa-phone" style="font-size:25px"></i>
+                        &nbsp;&nbsp;ÖĞRENCİ TELEFON : <asp:TextBox runat="server" style="font-size:20px">@Model.OgrTelefon</asp:TextBox>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <i class="fa fa-envelope" style="font-size:25px"></i>
+                        &nbsp;&nbsp;ÖĞRENCİ MAİL : <asp:TextBox runat="server" style="font-size:20px">@Model.OgrMail</asp:TextBox>
+                        <br />
+                        <br />
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"
+                                style="background-color: #ce0000; text-decoration: none; color:white; padding: 6px 15px ; font-size:20px; border-radius: 5px 5px 5px 5px; border:2px ">
+                            <i class="fa fa-trash"></i>
+                        </button>&nbsp;&nbsp;&nbsp;
+                        <a href="~/AkademisyenOgrenciler/OgrGuncelle/@Model.Ogr_ID"
+                           style="background-color: #57d500; color: white; padding: 6.5px 14px; font-size: 20px; border-radius: 5px 5px 5px 5px; text-align: center; position: relative; top:3px ">
+                            <i class="glyphicon glyphicon-refresh"></i>
+                        </a>
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">ÖĞRENCİYİ SİL!</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+
+                                    <div class="modal-body">
+                                        @Model.OgrAd @Model.OgrSoyad öğrencisini silmek istediğinze emin misiniz?
+                                        Eğer sil butonuna tıklarsanız öğrenci tüm kayıtlardan silinicektir!!
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-dark" data-dismiss="modal">Vazgeç</button>
+                                        <a href="~/AkademisyenOgrenciler/OgrSil/@Model.Ogr_ID"
+                                           style="background-color: #ce0000; text-decoration: none; color:white; padding: 7px 12px ; font-size:15px; border-radius: 5px 5px 5px 5px; text-align:center ">
+                                            SİL
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+
+
+

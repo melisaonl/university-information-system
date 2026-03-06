@@ -1,0 +1,75 @@
+﻿@model AkademikBilgiSistemi.Models.Tbl_Notlar
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAkademisyen.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tbl_Notlar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Sinav1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sinav1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sinav2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sinav2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sinav3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sinav3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ortalama)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ortalama)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Durum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Durum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Dersler.DersAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Dersler.DersAd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Tbl_Ogrenciler.OgrAd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Tbl_Ogrenciler.OgrAd)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

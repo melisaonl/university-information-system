@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f428fe3e997f49709fd087369ce365bb" Name="Diagram1" ZoomLevel="94">
+        <EntityTypeShape EntityType="UNINOTSISTEMIModel.Tbl_Duyurular" Width="1.5" PointX="9.875" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UNINOTSISTEMIModel.Tbl_Mesajlar" Width="1.5" PointX="3" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UNINOTSISTEMIModel.Tbl_Ogrenciler" Width="1.5" PointX="0.5" PointY="0.5" />
+        <AssociationConnector Association="UNINOTSISTEMIModel.FK_Tbl_Mesajlar_Tbl_ogrenciler" />
+        <AssociationConnector Association="UNINOTSISTEMIModel.FK_Tbl_Mesajlar_Tbl_ogrenciler1" />
+        <EntityTypeShape EntityType="UNINOTSISTEMIModel.Tbl_Notlar" Width="1.5" PointX="4.875" PointY="0.75" />
+        <AssociationConnector Association="UNINOTSISTEMIModel.FK_Tbl_Notlar_Tbl_ogrenciler" />
+        <EntityTypeShape EntityType="UNINOTSISTEMIModel.Tbl_Dersler" Width="1.5" PointX="4.875" PointY="4.375" />
+        <EntityTypeShape EntityType="UNINOTSISTEMIModel.Tbl_Ogretmenler" Width="1.5" PointX="7.5" PointY="2" />
+        <AssociationConnector Association="UNINOTSISTEMIModel.FK_Tbl_Notlar_Tbl_Dersler" />
+        <AssociationConnector Association="UNINOTSISTEMIModel.FK_Tbl_Ogretmenler_Tbl_Dersler" />
+        <AssociationConnector Association="UNINOTSISTEMIModel.FK_Tbl_Duyurular_Tbl_Ogretmenler" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
